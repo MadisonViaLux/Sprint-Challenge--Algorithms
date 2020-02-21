@@ -97,7 +97,24 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # We want to basically compare the current Item and move over and compare the next item (I dropped using the
+        # "set_light_on/off" to simplify)
+        while True:
+            while self.can_move_right():
+                # All options available to move to the right that say if the current held items value is smaller or None
+                # then swap out for the new item and continue moving forward
+                if self.compare_item() is None or self.compare_item() == -1:
+                    self.swap_item()
+                self.move_right()
+            # if you happen to have the max value in the arry, break the loop
+            if (not self.can_move_right()) and self.compare_item() is None:
+                break
+            # if the value of the compared item is greater than your current held item, swap them and go left, this now
+            # creates the cycle of comparing the largest value to the nearest smallest value
+            while self.can_move_left():
+                if self.compare_item() == 1:
+                    self.swap_item()
+                self.move_left()
 
 
 if __name__ == "__main__":
