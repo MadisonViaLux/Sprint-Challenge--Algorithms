@@ -2,15 +2,16 @@
 
 ## Exercise I
 
-a) O(log n^3) Because "a" is a constant that gets slowly increased
+a) O(n) 
+Because "a" is a constant that gets slowly increased
 until it reaches "n" which is being ^3
 
 
-b) O(n^2) Because what we're iterating through ("n") is being 
+b) O(n log n) Because what we're iterating through ("n") is being 
 multiplied by 2
 
 
-c) O(n-1) Because the end result of "n" is being subtracted 
+c) O(n) Because the end result of "n" is being subtracted 
 by 1
 
 ## Exercise II
